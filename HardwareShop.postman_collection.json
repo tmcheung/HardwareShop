@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "05b7834a-819f-41d0-ad81-9b6dd69f8dbd",
+		"name": "HardwareShop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/product?takeFrom=0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "takeFrom",
+									"value": "0"
+								},
+								{
+									"key": "amount",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "filter",
+									"value": "Fan",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": null,\r\n    \"Name\": \"New Product\",\r\n    \"Description\": \"Very nice\",\r\n    \"Price\": 123\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": \"da22e200-e0bb-4051-a85b-1e6b678dd857\",\r\n    \"Name\": \"New Product\",\r\n    \"Description\": \"Very nice, even more details\",\r\n    \"Price\": 1111111\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/product?productId=da22e200-e0bb-4051-a85b-1e6b678dd857",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "da22e200-e0bb-4051-a85b-1e6b678dd857"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/order/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"all"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/order?id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": \"12abe455-bd27-4dca-a8f3-b961bbf4c586\",\r\n    \"State\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/order/summary?id=56deff59-1bdf-4311-821d-0ddc8949556f",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"summary"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "56deff59-1bdf-4311-821d-0ddc8949556f"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Banner",
+			"item": []
+		},
+		{
+			"name": "ProductOrder",
+			"item": [
+				{
+					"name": "Upsert ProductOrder",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"OrderId\": \"56deff59-1bdf-4311-821d-0ddc8949556f\",\r\n    \"ProductId\": \"5588bcfb-0e27-450c-b0c4-80ab54836103\",\r\n    \"ProductAmount\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/productorder",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"productorder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete ProductOrder",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/productorder?orderId&productId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"productorder"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": null
+								},
+								{
+									"key": "productId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://localhost:5001"
+		}
+	]
+}
